@@ -9,6 +9,16 @@ function validate(pace){
 	}
 }
 
+function finishTime(pace,dist){
+	var min = dist * pace;
+	var hour = 0;
+	if(min > 60){
+		hour = Math.floor(min / 60);          
+		min = min % 60;
+	}
+	return {"hour":hour,"min":min}
+}
+
 
 function calculate(p,d){
 		var msg = "";
@@ -19,12 +29,7 @@ function calculate(p,d){
 		if (chk != mull)
 			return chk;
 	//---------------------------
-		var min = dist * pace;
-		var hour = 0;
-		if(min > 60){
-			hour = Math.floor(min / 60);          
-			min = min % 60;
-		}
+		var tf = finishTime(pace,dist)
 	//---------------------------
 		msg = "successfully calculated!"
 		return {"status":1,"message":msg,"hour":hour,"min":min};
