@@ -29,8 +29,8 @@ function calculate(p,d){
 		if (chk != mull)
 			return chk;
 	//---------------------------
-		var tf = finishTime(pace,dist)
+		var tf = finishTime(pace,dist);
 	//---------------------------
 		msg = "successfully calculated!"
-		return {"status":1,"message":msg,"hour":hour,"min":min};
+		return {"status":1,"message":msg,"hour":tf.hour,"min":tf.min};
 }
